@@ -1,6 +1,5 @@
 #!/usr/bin/python
 
-
 """
 Origin List:
 http://services.my511.org/traffic/getoriginlist.aspx?token=af466849-ac4d-47be-9e81-1aa6e0ffdd9f
@@ -111,13 +110,13 @@ def printRoutes(paths):
 		if (long(p1.currentTravelTime) / long(p1.typicalTravelTime)) > 1.1:
 			star = '**'
 
-		print '%sRoute %d: current: %s mins / typical: %s mins / distance: %s miles (via %s)' % (
+		print '%sRoute %d (via %s):\n\ttime: %s mins (%s typical)\n\tdistance: %s miles' % (
 			star,
 			p1.n + 1,
+			roads,
 			p1.currentTravelTime,
 			p1.typicalTravelTime,
-			p1.miles,
-			roads)
+			p1.miles)
 
 if __name__ == "__main__":
 	main(sys.argv[1:])
