@@ -25,6 +25,7 @@ class Path:
 	typicalTravelTime = 0
 	miles = 0
 	segments = []
+	incidents = []
 
 # input data
 
@@ -96,6 +97,11 @@ def parsePaths(xml_paths):
 		for segment in segments:
 			if not "Ramp" in segment.childNodes[0].data:
 				p.segments.append(segment.childNodes[0].data)
+		incidents = path.getElementsByTagName('incident')
+		p.incidents = []
+		for incident in incidents:
+			p.incidents.append(incident.childNodes[0].data)
+
 		paths.append(p)
 
 	return paths
@@ -117,6 +123,9 @@ def printRoutes(paths):
 			p1.currentTravelTime,
 			p1.typicalTravelTime,
 			p1.miles)
+
+		for incident in p1.incidents:
+			print '\t***Incident: %s' % incident
 
 if __name__ == "__main__":
 	main(sys.argv[1:])
