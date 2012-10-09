@@ -38,7 +38,7 @@ def main(argv):
 	dest_id = '1061'
 
 	try:
-		opts, args = getopt.getopt(argv, "ht:o:d:",["token=","origin=","destination="])
+		opts, args = getopt.getopt(argv, "ht:o:d:r",["token=","origin=","destination="])
 	except getopt.GetoptError:
 		print 'traffic.py -t token -o originid -d destinationid'
 		sys.exit(2)
@@ -52,6 +52,9 @@ def main(argv):
 			dest_id = arg
 		elif opt in ('-t', '--token'):
 			token = token
+                elif opt in ('-r', '--reverse'):
+                        origin_id, dest_id = dest_id, origin_id
+
 
 	routes = getRoutes(token, origin_id, dest_id)
 	printRoutes(sorted(routes, key=lambda route: route.currentTravelTime))
