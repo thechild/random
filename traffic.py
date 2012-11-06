@@ -19,6 +19,8 @@ import sys, getopt
 import urllib2, urllib
 from xml.dom import minidom
 
+
+	
 class Path:
 	n = 0
 	currentTravelTime = 0
