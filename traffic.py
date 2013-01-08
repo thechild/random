@@ -1,6 +1,8 @@
 #!/usr/bin/python
 
 """
+This is a simple script that gets the current traffic information between two locations in the bay area.  You can determine origin and destination node ids at the URLs listed below.
+
 Origin List:
 http://services.my511.org/traffic/getoriginlist.aspx?token=af466849-ac4d-47be-9e81-1aa6e0ffdd9f
 
