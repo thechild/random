@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!--    <link href="bootstrap.css" rel="stylesheet"> -->
+<style>
+body {
+    font-family: "Elena Web Basic";
+    font-size: 12pt;
+}
+.news {
+    -webkit-column-count: 2;
+    -webkit-column-gap: 20px;
+    -moz-column-count: 2;
+    -moz-column-gap: 20px;
+    font-family: "Elena Web Basic";
+    font-size: 12pt;
+}
+.financings {
+    -moz-column-count: 2;
+    -moz-column-gap: 20px;
+}
+p {
+    page-break-inside: avoid;
+}
+h2 { 
+    font-family: "Elena Web Basic";
+    font-size: 16pt;
+    border-bottom-style: solid;
+    border-bottom-color: darkgrey;
+    border-bottom-width: 2px;
+}
+
+@media print
+    {
+        a {display:none;}
+    }
+@page
+{
+    size: auto;
+    margin: .5in .5in .5in .5in;
+}
+
+</style>
+<title>Redpoint Early Stage News - {{ DATE }}</title>
+</head>
+<body>
+<h2 class="header">Redpoint Early Stage News <span style="float: right;">{{ DATE }}</span></h2>
+<div class="news">
+{{ NEWS }}
+</div>
+<div class="financings">
+{{ FINANCINGS }}
+</div>
+</body>
+</html>
